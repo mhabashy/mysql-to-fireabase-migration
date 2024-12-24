@@ -1,0 +1,17 @@
+version: '3.8'
+services:
+  db:
+    platform: linux/x86_64 # FOR MAC M1 PRO
+    image: mysql:5.7
+    restart: always
+    environment:
+      MYSQL_DATABASE: ''
+      MYSQL_USER: ''
+      MYSQL_PASSWORD: ''
+      MYSQL_ROOT_PASSWORD: ''
+    ports:
+      - '3306:3306'
+    expose:
+      - '3306'
+    volumes:
+      - ./db/:/var/lib/mysql
